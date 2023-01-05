@@ -3,7 +3,7 @@
     <h2 class="header center">{{ pokemon.name }}</h2>
     <div class="card horizontal hoverable">
       <div class="card-image">
-        <img [src]="pokemon.picture">
+        <img [src]="pokemon.picture" />
       </div>
       <div class="card-stacked">
         <div class="card-content">
@@ -37,9 +37,12 @@
         <div class="card-action">
           <a (click)="goBack()">Retour</a>
           <a (click)="goToEditPokemon(pokemon)">Editer</a>
+          <a (click)="deletePokemon(pokemon)">Supprimer</a>
         </div>
       </div>
     </div>
     </div>
     </div>
-    <h4 *ngIf='!pokemon' class="center">Aucun pokémon à afficher !</h4>
+    <h4 *ngIf='!pokemon' class="center">
+      <app-loader></app-loader>
+    </h4>
